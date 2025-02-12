@@ -1,14 +1,11 @@
-# h1 Heading 8-)
-## h2 Heading
-### h3 Heading
-#### h4 Heading
-##### h5 Heading
-###### h6 Heading
+# Manap
+Responsive HTML,CSS and Bootstrap Portfolio
 
-Alternatively, for H1 and H2, an underline-ish style:
 
-Alt-H1
-======
-
-Alt-H2
-------
+# Features
+- Fully Responsive
+- Mobile Navigations
+- Animated elements on scroll
+- Smooth scrolling in each section.
+- Sticky Navigation on scrolling
+- and more ..
