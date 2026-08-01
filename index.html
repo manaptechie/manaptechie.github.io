@@ -1,322 +1,615 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" data-page="profile" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Website</title>
-    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./assets/css/aos.css">
-    <link rel="stylesheet" href="./assets/css/line-awesome.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="icon" href="./assets/images/favicon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Narendra Patel — Senior IT Leader | Oracle SCM &amp; OTM/GTM Solution Architect</title>
+<meta name="description" content="Senior IT Leader and Oracle SCM/OTM Solution Architect with 21+ years delivering Oracle Transportation Management (OTM/GTM) and E-Business Suite solutions for Trane Technologies and Ingersoll Rand. $14M+ in delivered cost savings.">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+@charset "utf-8";
+:root { --navy: #0f1e36; --navy2: #1a2f4e; --blue: #1d6fa4; --blue-light: #3a8fc4; --accent: #e8a020; --accent2: #f0c060; --white: #ffffff; --off: #f4f6f9; --text: #1a1a2e; --muted: #5a6a7e; --border: #dde3ec; --green: #1a7a4a; --red: #c0392b; }
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: "DM Sans", sans-serif; color: var(--text); background: var(--white); line-height: 1.7; font-size: 16px; }
+
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(15, 30, 54, 0.97); backdrop-filter: blur(12px); padding: 0 5%; }
+.nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.nav-logo { font-family: Syne, sans-serif; font-weight: 800; font-size: 1.2rem; color: var(--white); text-decoration: none; letter-spacing: 0.02em; }
+.nav-logo span { color: var(--accent); }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.875rem; font-weight: 500; transition: color 0.2s; letter-spacing: 0.03em; }
+.nav-links a:hover { color: var(--accent); }
+.nav-cta { background: var(--accent); color: var(--navy); padding: 0.5rem 1.25rem; border-radius: 6px; font-weight: 600; font-size: 0.875rem; text-decoration: none; transition: background 0.2s; }
+.nav-cta:hover { background: var(--accent2); }
+
+.hero { min-height: 100vh; background: var(--navy); display: flex; align-items: center; padding: 100px 5% 60px; position: relative; overflow: hidden; }
+.hero::before { content: ""; position: absolute; top: -200px; right: -200px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(29,111,164,0.25) 0%, transparent 70%); pointer-events: none; }
+.hero::after { content: ""; position: absolute; bottom: -100px; left: -100px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(232,160,32,0.1) 0%, transparent 70%); pointer-events: none; }
+.hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 420px; gap: 5rem; align-items: center; width: 100%; }
+.hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(232,160,32,0.15); border: 1px solid rgba(232,160,32,0.3); color: var(--accent2); padding: 0.35rem 0.9rem; border-radius: 20px; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.05em; margin-bottom: 1.5rem; }
+.hero-badge::before { content: "●"; font-size: 0.6rem; animation: pulse 2s ease infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+.hero h1 { font-family: Syne, sans-serif; font-weight: 800; font-size: clamp(2.2rem, 4vw, 3.4rem); color: var(--white); line-height: 1.1; margin-bottom: 1rem; letter-spacing: -0.02em; }
+.hero h1 span { color: var(--accent); }
+.hero-sub { font-size: 1.05rem; color: rgba(255,255,255,0.65); margin-bottom: 1.5rem; font-weight: 300; max-width: 560px; }
+.hero-desc { font-size: 1rem; color: rgba(255,255,255,0.55); margin-bottom: 2rem; max-width: 540px; line-height: 1.8; }
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-primary { background: var(--accent); color: var(--navy); padding: 0.75rem 1.75rem; border-radius: 8px; font-weight: 600; text-decoration: none; transition: 0.2s; font-size: 0.95rem; }
+.btn-primary:hover { background: var(--accent2); transform: translateY(-1px); }
+.btn-secondary { background: transparent; border: 1px solid rgba(255,255,255,0.25); color: var(--white); padding: 0.75rem 1.75rem; border-radius: 8px; font-weight: 500; text-decoration: none; transition: 0.2s; font-size: 0.95rem; }
+.btn-secondary:hover { border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.05); }
+.hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1em; margin-top: 2.5rem; padding-top: 2.5rem; border-top: 1px solid rgba(255,255,255,0.1); }
+.hero-stat-num { font-family: Syne, sans-serif; font-size: 1.8rem; font-weight: 800; color: var(--accent); display: block; }
+.hero-stat-label { font-size: 0.8rem; color: rgba(255,255,255,0.5); letter-spacing: 0.05em; }
+.hero-photo-wrap { position: relative; }
+.hero-photo-card { background: var(--navy2); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; overflow: hidden; aspect-ratio: 4 / 5; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; padding: 2rem 1rem; }
+.hero-photo-initials { font-family: Syne, sans-serif; font-weight: 800; font-size: 5rem; color: rgba(255,255,255,0.9); background: linear-gradient(160deg, var(--blue) 0%, var(--navy2) 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+.hero-photo-img { width: 390px; height: 390px; border-radius: 50%; object-fit: cover; border: 4px solid var(--accent); box-shadow: 0 8px 24px rgba(0,0,0,0.35); }
+.photo-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 1.25rem; background: linear-gradient(transparent, rgba(15,30,54,0.95)); }
+.photo-name { font-family: Syne, sans-serif; color: var(--white); font-weight: 700; font-size: 1rem; }
+.photo-title { color: rgba(255,255,255,0.6); font-size: 0.8rem; margin-top: 0.2rem; }
+.photo-tag { position: absolute; top: 1rem; right: 1rem; background: rgba(26,122,74,0.9); color: #fff; padding: 0.3rem 0.7rem; border-radius: 20px; font-size: 0.72rem; font-weight: 500; backdrop-filter: blur(4px); }
+
+section { padding: 80px 5%; }
+.section-inner { max-width: 1200px; margin: 0 auto; }
+.section-tag { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; color: var(--blue); text-transform: uppercase; margin-bottom: 0.75rem; }
+.section-title { font-family: Syne, sans-serif; font-size: clamp(1.75rem, 3vw, 2.4rem); font-weight: 700; color: var(--text); margin-bottom: 1rem; line-height: 1.2; }
+.section-subtitle { color: var(--muted); max-width: 600px; margin-bottom: 3rem; font-size: 1rem; }
+
+.portfolio-strip { background: var(--off); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 40px 5%; }
+.portfolio-strip .section-inner { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+.port-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; transition: box-shadow 0.2s; }
+.port-card:hover { box-shadow: rgba(0,0,0,0.08) 0 4px 20px; }
+.port-card-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
+.port-card-num { font-family: Syne, sans-serif; font-size: 1.6rem; font-weight: 800; color: var(--navy); }
+.port-card-label { font-size: 0.85rem; color: var(--muted); margin-top: 0.25rem; }
+.port-card-link { display: inline-block; margin-top: 0.75rem; font-size: 0.8rem; color: var(--blue); text-decoration: none; font-weight: 500; }
+.port-card-link:hover { text-decoration: underline; }
+
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+.about-text p { color: var(--muted); margin-bottom: 1rem; line-height: 1.8; }
+.about-text strong { color: var(--text); }
+.honest-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgb(232,245,238); border: 1px solid rgb(184,223,200); color: var(--green); padding: 0.4rem 0.9rem; border-radius: 6px; font-size: 0.82rem; font-weight: 500; margin-bottom: 1.5rem; }
+.about-highlights { display: flex; flex-direction: column; gap: 1rem; }
+.highlight-item { background: var(--off); border-left: 3px solid var(--blue); border-radius: 0 8px 8px 0; padding: 1rem 1.25rem; }
+.highlight-item h4 { font-family: Syne, sans-serif; font-size: 0.9rem; font-weight: 700; color: var(--navy); margin-bottom: 0.25rem; }
+.highlight-item p { font-size: 0.85rem; color: var(--muted); margin: 0; }
+
+.skills-bg { background: var(--navy); }
+.skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.skill-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1.5rem; transition: background 0.2s; }
+.skill-card:hover { background: rgba(255,255,255,0.08); }
+.skill-card-icon { font-size: 1.4rem; margin-bottom: 0.75rem; }
+.skill-card h3 { font-family: Syne, sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--white); margin-bottom: 0.75rem; }
+.skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.skill-tag { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.7); padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.75rem; }
+.skill-tag.learning { background: rgba(232,160,32,0.15); color: var(--accent2); border: 1px solid rgba(232,160,32,0.2); }
+
+.exp-timeline { display: flex; flex-direction: column; gap: 2rem; }
+.exp-item { background: var(--off); border: 1px solid var(--border); border-radius: 12px; padding: 1.75rem; position: relative; }
+.exp-item::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--blue); border-radius: 4px 0 0 4px; }
+.exp-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem; }
+.exp-role { font-family: Syne, sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--navy); }
+.exp-date { font-size: 0.8rem; color: var(--muted); background: var(--white); border: 1px solid var(--border); padding: 0.25rem 0.75rem; border-radius: 20px; white-space: nowrap; }
+.exp-company { font-size: 0.9rem; color: var(--blue); font-weight: 500; margin-bottom: 0.75rem; }
+.exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+.exp-bullets li { font-size: 0.9rem; color: var(--muted); padding-left: 1.25rem; position: relative; line-height: 1.6; }
+.exp-bullets li::before { content: "→"; position: absolute; left: 0; color: var(--blue); }
+.exp-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
+.exp-tag { background: rgba(29,111,164,0.1); color: var(--blue); padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 500; }
+
+.projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.project-card { background: var(--off); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; }
+.project-card:hover { transform: translateY(-3px); box-shadow: rgba(0,0,0,0.1) 0 8px 30px; }
+.project-card-header { background: var(--navy); padding: 1.25rem 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+.project-num { font-family: Syne, sans-serif; font-size: 0.75rem; color: var(--accent); font-weight: 700; letter-spacing: 0.08em; }
+.project-live { font-size: 0.7rem; color: rgb(76,175,80); background: rgba(76,175,80,0.15); padding: 0.2rem 0.5rem; border-radius: 10px; }
+.project-card-body { padding: 1.25rem 1.5rem; }
+.project-card-body h3 { font-family: Syne, sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; }
+.project-card-body p { font-size: 0.85rem; color: var(--muted); line-height: 1.6; margin-bottom: 1rem; }
+.project-card-footer { padding: 0 1.5rem 1.25rem; }
+.project-stack { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 0.75rem; }
+.proj-tag { background: rgba(29,111,164,0.1); color: var(--blue); padding: 0.18rem 0.55rem; border-radius: 4px; font-size: 0.72rem; }
+.project-link { font-size: 0.82rem; color: var(--blue); text-decoration: none; font-weight: 500; }
+.project-link:hover { text-decoration: underline; }
+
+.certs-bg { background: var(--off); }
+.certs-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+.cert-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 1.1rem; display: flex; flex-direction: column; gap: 0.4rem; }
+.cert-icon { font-size: 1.2rem; }
+.cert-name { font-size: 0.85rem; font-weight: 600; color: var(--navy); line-height: 1.3; }
+.cert-issuer { font-size: 0.75rem; color: var(--muted); }
+.cert-status { font-size: 0.7rem; font-weight: 500; color: var(--green); }
+
+.connect-bg { background: var(--navy); }
+.connect-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.connect-links { display: flex; flex-direction: column; gap: 1rem; }
+.connect-link { display: flex; align-items: center; gap: 1rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 1rem 1.25rem; text-decoration: none; transition: background 0.2s; }
+.connect-link:hover { background: rgba(255,255,255,0.1); }
+.connect-link-icon { font-size: 1.2rem; width: 36px; text-align: center; }
+.connect-link-text strong { display: block; color: var(--white); font-size: 0.9rem; }
+.connect-link-text span { color: rgba(255,255,255,0.5); font-size: 0.8rem; }
+.connect-cta h2 { font-family: Syne, sans-serif; font-size: 2rem; font-weight: 800; color: var(--white); margin-bottom: 1rem; line-height: 1.2; }
+.connect-cta h2 span { color: var(--accent); }
+.connect-cta p { color: rgba(255,255,255,0.6); margin-bottom: 1.5rem; font-size: 0.95rem; }
+.connect-details { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1.5rem; }
+.connect-detail { display: flex; align-items: center; gap: 0.75rem; color: rgba(255,255,255,0.7); font-size: 0.9rem; }
+.connect-detail a { color: var(--accent2); text-decoration: none; }
+
+.pub-block { margin-top: 2rem; padding: 1.25rem; background: var(--white); border: 1px solid var(--border); border-radius: 10px; }
+.pub-title { font-size: 0.8rem; font-weight: 600; color: var(--navy); margin-bottom: 0.75rem; }
+.pub-list { display: flex; flex-direction: column; gap: 0.6rem; }
+.pub-item { font-size: 0.85rem; color: var(--muted); padding-left: 1.1rem; position: relative; }
+.pub-item::before { content: "✎"; position: absolute; left: 0; color: var(--accent); }
+.pub-item a { color: var(--blue); text-decoration: none; font-weight: 500; }
+.pub-item a:hover { text-decoration: underline; }
+
+footer { background: rgba(15,30,54,0.98); border-top: 1px solid rgba(255,255,255,0.08); padding: 1.5rem 5%; text-align: center; }
+footer p { color: rgba(255,255,255,0.4); font-size: 0.82rem; }
+
+@media (max-width: 900px) {
+  .hero-inner, .about-grid, .connect-grid { grid-template-columns: 1fr; }
+  .hero-photo-wrap { display: none; }
+  .portfolio-strip .section-inner, .skills-grid, .projects-grid, .certs-grid { grid-template-columns: 1fr 1fr; }
+  .nav-links { display: none; }
+}
+@media (max-width: 600px) {
+  .portfolio-strip .section-inner, .skills-grid, .projects-grid, .certs-grid { grid-template-columns: 1fr; }
+  .hero-stats { grid-template-columns: 1fr 1fr 1fr; }
+}
+</style>
 </head>
+<body>
 
-<body data-bs-spy="scroll" data-bs-target=".navbar">
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">NP<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certs</a></li>
+      <li><a href="#connect">Connect</a></li>
+    </ul>
+    <a href="mailto:Narendra.bsp@gmail.com" class="nav-cta">Get In Touch</a>
+  </div>
+</nav>
 
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container flex-lg-column">
-            <a class="navbar-brand mx-lg-auto mb-lg-4" href="#">
-                <span class="h3 fw-bold d-block d-lg-none">Narendra</span>
-                <img src="./assets/images/Profile.webp" class="d-none d-lg-block rounded-circle" alt="">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto flex-lg-column text-lg-center">
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#services">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#work">Work</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#skills">Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-
-                </ul>
-            </div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">● Senior IT Leader · Charlotte, NC</div>
+      <h1>Narendra<br>Patel<span>.</span></h1>
+      <p class="hero-sub">Senior Enterprise Architect &nbsp;·&nbsp; Oracle SCM Solution Architect &nbsp;·&nbsp; OTM/GTM Specialist &nbsp;·&nbsp; AI Engineer &nbsp;·&nbsp; GenAI Practitioner</p>
+      <p class="hero-desc">21+ years architecting and delivering Oracle Transportation Management (OTM/GTM) and E-Business Suite Supply Chain solutions for Trane Technologies, Ingersoll Rand, and global manufacturing leaders — driving $14M+ in freight and operational cost savings through solution architecture, cloud migration, and process automation.</p>
+      <div class="hero-actions">
+        <a href="mailto:Narendra.bsp@gmail.com" class="btn-primary">Get In Touch →</a>
+        <a href="http://www.linkedin.com/in/narendra-patel-b750b315" target="_blank" class="btn-secondary">View LinkedIn →</a>
+      </div>
+      <div class="hero-stats">
+        <div><span class="hero-stat-num">21+</span><span class="hero-stat-label">YRS ORACLE SCM/OTM</span></div>
+        <div><span class="hero-stat-num">$14M+</span><span class="hero-stat-label">COST SAVINGS DELIVERED</span></div>
+        <div><span class="hero-stat-num">12</span><span class="hero-stat-label">ACTIVE CERTIFICATIONS</span></div>
+      </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <div class="hero-photo-card">
+        <img src="../NarendraPatel_ProfileGit.png" alt="Narendra Patel" class="hero-photo-img">
+        <div class="photo-tag">Working</div>
+        <div class="photo-overlay">
+          <div class="photo-name">Narendra Patel</div>
+          <div class="photo-title">Oracle SCM &amp; OTM Solution Architect</div>
         </div>
-    </nav>
-    <!-- //NAVBAR -->
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- CONTENT WRAPPER -->
-    <div id="content-wrapper">
+<!-- PORTFOLIO STRIP -->
+<div class="portfolio-strip">
+  <div class="section-inner">
+    <div class="port-card">
+      <div class="port-card-icon">🚚</div>
+      <div class="port-card-num">$14M+</div>
+      <div class="port-card-label">Freight &amp; Operational Cost Savings Delivered</div>
+    </div>
+    <div class="port-card">
+      <div class="port-card-icon">🏆</div>
+      <div class="port-card-num">5</div>
+      <div class="port-card-label">President's &amp; IT Excellence Awards</div>
+    </div>
+    <div class="port-card">
+      <div class="port-card-icon">📄</div>
+      <div class="port-card-num">4</div>
+      <div class="port-card-label">OTM US SIG Conference Papers Presented</div>
+      <a href="https://idcdocserv.com/US52726824" target="_blank" class="port-card-link">Read IDC Paper →</a>
+    </div>
+    <div class="port-card">
+      <div class="port-card-icon">🎓</div>
+      <div class="port-card-num">14</div>
+      <div class="port-card-label">Customer Applications Supported</div>
+    </div>
+  </div>
+</div>
 
-        <!-- HOME -->
-        <section id="home" class="full-height px-lg-5">
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-text">
+        <div class="section-tag">About</div>
+        <h2 class="section-title">Enterprise SCM Delivery.<br>OTM Solution Architect.</h2>
+        <div class="honest-badge">✓ 21+ years Oracle SCM &amp; Transportation Management delivery</div>
+        <p>I am a senior IT leader and Solution Architect with <strong>over 21 years of specialized experience</strong> in Oracle Supply Chain Management (SCM) and Transportation Management (OTM/GTM), currently engaged with Trane Technologies through Tata Consultancy Services (TCS).</p>
+        <p>I have <strong>orchestrated complex implementations and integrations</strong> across Oracle E-Business Suite and OTM/GTM — leading full-lifecycle rollouts, cloud migrations, and process re-engineering for over <strong>14 client applications</strong> spanning manufacturing, retail, and logistics.</p>
+        <p>My work spans <strong>pre-sales, solution design, and program delivery</strong> — fit-gap analysis, POC development, and integration architecture that has delivered <strong>$14M+ in direct and indirect cost benefits</strong>, including 5 President's and IT Excellence awards. Recently expanding into <strong>AI, machine learning, and Python</strong> for route optimization, delay prediction, and enhanced supply chain visibility — OCI 2025 Generative AI Professional certified.</p>
+        <p>Based in Charlotte, NC. Open to Solution Architect and SCM/OTM leadership engagements.</p>
+      </div>
+      <div class="about-highlights">
+        <div class="highlight-item">
+          <h4>🚚 Transportation Management (OTM/GTM)</h4>
+          <p>Deep expertise in Shipment Planning, Fleet &amp; Sourcing, Rates, EDI, Mobility, and Global Trade Management across OTM 5.5/6.x and OTM/GTM Cloud.</p>
+        </div>
+        <div class="highlight-item">
+          <h4>🏭 Oracle E-Business Suite SCM</h4>
+          <p>Order Management, Inventory, Shipping, and WMS modules (R12 &amp; 11i). Full lifecycle delivery using Oracle AIM methodology.</p>
+        </div>
+        <div class="highlight-item">
+          <h4>☁️ Cloud &amp; Integration Architecture</h4>
+          <p>Oracle Fusion SCM Cloud, OCI Architect Associate, Oracle Integration Cloud (OIC), Google Apigee, and ATP database-backed integrations.</p>
+        </div>
+        <div class="highlight-item">
+          <h4>🤖 AI &amp; Automation (Emerging)</h4>
+          <p>OCI 2025 Generative AI Professional. Leveraging Python and ML for route optimization, delay prediction, and supply chain visibility.</p>
+        </div>
+        <div class="highlight-item">
+          <h4>📈 Program &amp; Delivery Leadership</h4>
+          <p>Pre-sales, solution architecture, and program delivery across 14+ applications — $14M+ in cost benefits and deal wins.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-10">
-                        <h1 class="display-4 fw-bold" data-aos="fade-up">I am a <span class="text-brand">Solution Architect</span></h1>
-                        <p class="lead mt-2 mb-4" data-aos="fade-up" data-aos-delay="300"></p>
-                        <div data-aos="fade-up" data-aos-delay="600">
-                            <a href="#work" class="btn btn-brand me-3">About My Work</a>
-                            <a href="#" class="link-custom">Contact Details</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!-- SKILLS -->
+<section id="skills" class="skills-bg">
+  <div class="section-inner">
+    <div class="section-tag" style="color:var(--accent2)">Technical Skills</div>
+    <h2 class="section-title" style="color:var(--white)">Full-Stack Oracle SCM &amp; OTM Engineering</h2>
+    <p class="section-subtitle" style="color:rgba(255,255,255,0.5)">Hands-on across the Oracle supply chain and transportation stack — from solution architecture to cloud integration.</p>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-card-icon">🚚</div>
+        <h3>Transportation Management</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">OTM 5.5/6.x</span><span class="skill-tag">OTM/GTM Cloud</span><span class="skill-tag">Global Trade Management</span><span class="skill-tag">Rate Engine (RIQ)</span><span class="skill-tag">EDI</span><span class="skill-tag">Mobility</span><span class="skill-tag">e2Open / BluJay Parcel</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-icon">🏭</div>
+        <h3>Oracle E-Business Suite</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Order Management</span><span class="skill-tag">Inventory</span><span class="skill-tag">Shipping</span><span class="skill-tag">WMS</span><span class="skill-tag">Fusion SCM Cloud</span><span class="skill-tag">Oracle AIM</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-icon">☁️</div>
+        <h3>Cloud &amp; Integration</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Oracle Integration Cloud (OIC)</span><span class="skill-tag">Google Apigee</span><span class="skill-tag">ATP Database</span><span class="skill-tag">Oracle Cloud Infrastructure</span><span class="skill-tag">FourKite</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-icon">🤖</div>
+        <h3>AI &amp; Emerging Tech</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">OCI Generative AI</span><span class="skill-tag learning">Python for ML ✦</span><span class="skill-tag learning">Route Optimization ✦</span><span class="skill-tag learning">Delay Prediction ✦</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-icon">💻</div>
+        <h3>Programming &amp; Tools</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Oracle PL/SQL</span><span class="skill-tag">Python</span><span class="skill-tag">SQL Developer</span><span class="skill-tag">TOAD</span><span class="skill-tag">JDeveloper</span><span class="skill-tag">VS Code</span><span class="skill-tag">BI Publisher</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-icon">🏗️</div>
+        <h3>Architecture &amp; Delivery</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Solution Architecture</span><span class="skill-tag">Fit-Gap Analysis</span><span class="skill-tag">RICE Concepts</span><span class="skill-tag">Agile / Scrum</span><span class="skill-tag">Program Management</span><span class="skill-tag">Pre-Sales</span>
+        </div>
+      </div>
+    </div>
+    <p style="margin-top:1.5rem;font-size:0.8rem;color:rgba(255,255,255,0.35);">✦ Currently expanding</p>
+  </div>
+</section>
 
-        </section>
-        <!-- //HOME -->
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-inner">
+    <div class="section-tag">Work Experience</div>
+    <h2 class="section-title">21 Years. Enterprise SCM Scale.</h2>
+    <p class="section-subtitle">Senior OTM &amp; Oracle SCM delivery roles for Trane Technologies and Ingersoll Rand, delivered through Tata Consultancy Services (TCS).</p>
+    <div class="exp-timeline">
 
-        <!-- SERVICES -->
-        <section id="services" class="full-height px-lg-5">
-            <div class="container">
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-role">OTM Solution Architect &amp; Functional Lead</div>
+          <div class="exp-date">Feb 2025 – Present</div>
+        </div>
+        <div class="exp-company">Tata Consultancy Services · Client: Trane Technologies, USA</div>
+        <ul class="exp-bullets">
+          <li>Spearheaded solution architecture for a multi-phase, multi-regional (North America &amp; Europe) OTM Cloud implementation, modernizing the global transportation platform</li>
+          <li>Owned functional design and mapping for 15+ critical interfaces between OTM Cloud, Oracle R12, and external partners (FourKite, Sterling, Digital Broker)</li>
+          <li>Architected future-state integration using Oracle Integration Cloud (OIC), Google Apigee, and an ATP database, developing a POC to de-risk the technical approach</li>
+          <li>Directed OTM Cloud configuration and migration strategy for custom components from legacy on-prem to cloud-native SaaS</li>
+        </ul>
+        <div class="exp-tags"><span class="exp-tag">OTM Cloud</span><span class="exp-tag">Oracle Integration Cloud</span><span class="exp-tag">Google Apigee</span><span class="exp-tag">Solution Architecture</span><span class="exp-tag">Cloud Migration</span></div>
+      </div>
 
-                <div class="row pb-4" data-aos="fade-up">
-                    <div class="col-lg-8">
-                        <h6 class="text-brand">SERVICES</h6>
-                        <h1>Services That I Provide</h1>
-                    </div>
-                </div>
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-role">OTM Solution Architect &amp; Functional Lead</div>
+          <div class="exp-date">Oct 2024 – Jan 2025</div>
+        </div>
+        <div class="exp-company">Tata Consultancy Services · Client: Trane Technologies, USA</div>
+        <ul class="exp-bullets">
+          <li>Led technical architecture and execution of the OTM v6.5.2 → v6.5.3 upgrade across Dev, 4 Non-Prod, and Production environments</li>
+          <li>Enabled the Integration Data Queue for cloud-compatible, high-performance inbound processing</li>
+          <li>Curated 30+ critical regression test cases and architected data migration and rollback plans to minimize downtime</li>
+        </ul>
+        <div class="exp-tags"><span class="exp-tag">OTM Upgrade</span><span class="exp-tag">Regression Testing</span><span class="exp-tag">Risk Mitigation</span><span class="exp-tag">Infor M3</span></div>
+      </div>
 
-                <div class="row gy-4">
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-role">Senior Oracle SCM / OTM Solution Architect</div>
+          <div class="exp-date">Apr 2022 – Sep 2024</div>
+        </div>
+        <div class="exp-company">Tata Consultancy Services · Client: Trane Technologies, USA</div>
+        <ul class="exp-bullets">
+          <li>SMART Columbia: standardized Order-to-Cash processes, built a custom Catalog Shipping Workbench in EBS R12, and architected an OSP transportation solution in OTM</li>
+          <li>Trane Rental Services: transformed manual logistics into an automated OTM platform with Infor M3 WMS integration, Bid/Direct Tendering, and FourKite visibility</li>
+          <li>TT Dock Appointment: replaced spreadsheet-based scheduling with an automated OTM Dock Scheduling Workbench across Dealer Sales Offices</li>
+          <li>Parcel Shipping Transformation: architected a Lean Packing solution across 11 sites, decommissioning legacy FedEx servers and integrating rating/labels into Oracle R12</li>
+        </ul>
+        <div class="exp-tags"><span class="exp-tag">OTM Dock Scheduling</span><span class="exp-tag">Infor M3</span><span class="exp-tag">Lean Packing</span><span class="exp-tag">Parcel Rationalization</span><span class="exp-tag">FourKite</span></div>
+      </div>
 
-                    <div class="col-md-4" data-aos="fade-up">
-                        <div class="service p-4 bg-base rounded-4 shadow-effect">
-                            <div class="iconbox rounded-4">
-                                <i class="las la-feather"></i>
-                            </div>
-                            <h5 class="mt-4 mb-2">Web Development</h5>
-                            <p></p>
-                        </div>
-                    </div>
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-role">Senior Oracle OTM Solution Architect</div>
+          <div class="exp-date">Jan 2022 – Mar 2023</div>
+        </div>
+        <div class="exp-company">Tata Consultancy Services · Client: Trane Technologies, USA</div>
+        <ul class="exp-bullets">
+          <li>Architected a custom, low-code Rate Inquiry Portal using OTM's RIQ Web Service, eliminating third-party licensing fees as the enterprise routing guide</li>
+          <li>Configured OTM user roles and security rules for internal/external data segregation with full audit logging</li>
+        </ul>
+        <div class="exp-tags"><span class="exp-tag">Rate Inquiry Portal</span><span class="exp-tag">UI/UX Design</span><span class="exp-tag">API Integration</span><span class="exp-tag">Cost Savings</span></div>
+      </div>
 
-                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                        <div class="service p-4 bg-base rounded-4 shadow-effect">
-                            <div class="iconbox rounded-4">
-                                <i class="las la-pencil-ruler"></i>
-                            </div>
-                            <h5 class="mt-4 mb-2">Front-End Development</h5>
-                            <p></p>
-                        </div>
-                    </div>
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-role">OTM Solution Architect &amp; Functional Lead</div>
+          <div class="exp-date">Jul 2019 – Dec 2021</div>
+        </div>
+        <div class="exp-company">Tata Consultancy Services · Client: Trane Technologies, USA</div>
+        <ul class="exp-bullets">
+          <li>Static Lane Automation: designed a rule-based OTM solution for dedicated carrier networks, automating recurring shipment planning</li>
+          <li>MDC Outbound Planning: architected multi-wave Oracle EBS/OTM enhancements delivering $1.5M in annual freight savings via consolidated, optimized loads</li>
+          <li>OTM2 Continuous Move: implemented Continuous Move &amp; Combined Bulk Planning, unlocking ~$1.2M in annual freight productivity</li>
+        </ul>
+        <div class="exp-tags"><span class="exp-tag">Static Lane</span><span class="exp-tag">Bulk Planning</span><span class="exp-tag">$1.5M Savings</span><span class="exp-tag">Continuous Move</span></div>
+      </div>
 
-                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
-                        <div class="service p-4 bg-base rounded-4 shadow-effect">
-                            <div class="iconbox rounded-4">
-                                <i class="las la-file-code"></i>
-                            </div>
-                            <h5 class="mt-4 mb-2">Back-End Development</h5>
-                            <p>.</p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
-                        <div class="service p-4 bg-base rounded-4 shadow-effect">
-                            <div class="iconbox rounded-4">
-                                <i class="las la-coins"></i>
-                            </div>
-                            <h5 class="mt-4 mb-2">Database Management</h5>
-                            <p></p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
-                        <div class="service p-4 bg-base rounded-4 shadow-effect">
-                            <div class="iconbox rounded-4">
-                                <i class="las la-laptop-code"></i>
-                            </div>
-                            <h5 class="mt-4 mb-2">Full Stack Development</h5>
-                            <p>.</p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
-                        <div class="service p-4 bg-base rounded-4 shadow-effect">
-                            <div class="iconbox rounded-4">
-                                <i class="las la-mobile"></i>
-                            </div>
-                            <h5 class="mt-4 mb-2">Responsive Design</h5>
-                            <p></p>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-        <!-- SERVICES -->
-
-        <!-- WORK -->
-        <section id="work" class="full-height px-lg-5">
-            <div class="container">
-
-                <div class="row pb-4" data-aos="fade-up">
-                    <div class="col-lg-8">
-                        <h6 class="text-brand">WORK</h6>
-                        <h1>About My Projects</h1>
-                    </div>
-                </div>
-
-                <div class="row gy-4">
-
-                    <div class="col-md-6" data-aos="fade-up">
-                        <div class="card-custom rounded-4 bg-base shadow-effect">
-                            <div class="card-custom-image rounded-4">
-                                <img class="rounded-4" src="./assets/images/project-1.png" alt="">
-                            </div>
-                            <div class="card-custom-content p-4">
-                                <h4>DEMO Website</h4>
-                                <p></p>
-                                <a href="https://" class="link-custom" target="_blank">Preview</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    
-                </div>
-
-            </div>
-        </section>
-        <!-- //WORK -->
-
-        <!-- ABOUT -->
-        <section id="about" class="full-height px-lg-5">
-            <div class="container">
-                <div class="row pb-4" data-aos="fade-up">
-                    <div class="col-lg-8">
-                        <h6 class="text-brand">ABOUT</h6>
-                        <h1 class="mb-4">About Me</h1>
-                        <p class="mb-4" data-aos="fade-up" data-aos-delay="300">
-                           Hi, This is Narendra.<br>
-                            I am a Solution Architect.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="row pb-4" data-aos="fade-up">
-                    <div class="col-lg-8">
-                        <h6 class="text-brand">ABOUT</h6>
-                        <h1>Education & Experience</h1>
-                    </div>
-                </div>
-
-                <div class="row gy-5">
-                    <div class="col-lg-6">
-
-                        <h3 class="mb-4" data-aos="fade-up" data-aos-delay="300">Education</h3>
-                        <div class="row gy-4">
-
-                            <div class="col-12" data-aos="fade-up" data-aos-delay="600">
-                                <div class="bg-base p-4 rounded-4 shadow-effect">
-                                 </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="col-lg-6">
-
-                        <h3 class="mb-4" data-aos="fade-up" data-aos-delay="300">Experience</h3>
-                        <div class="row gy-4">
-
-                            <div class="col-12" data-aos="fade-up" data-aos-delay="600">
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-        <!-- //ABOUT -->
-
-        <!-- SKILLS -->
-        <section id="skills" class="full-height px-lg-5">
-            <div class="container">
-
-                <div class="row pb-4" data-aos="fade-up">
-                    <div class="col-lg-8">
-                        <h1 class="mb-4">SKILLS & ACHEIVEMENTS</h1>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-        <!-- //SKILLS -->
-
-        <!-- CONTACT -->
-        <section id="contact" class="full-height px-lg-5">
-            <div class="container">
-
-                <div class="row justify-content-center text-center">
-                    <div class="col-lg-8 pb-4" data-aos="fade-up">
-                        <h6 class="text-brand">CONTACT</h6>
-                        <h1>Interested in working together? Let's talk
-                        </h1>
-                    </div>
-
-                    <div class="col-lg-8" data-aos="fade-up" data-aos-delay="300">
-                        <form action="mailto:a" class="row g-lg-3 gy-3">
-                            <div class="form-group col-md-6">
-                                <input type="text" class="form-control" placeholder="Name" required>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <input type="email" class="form-control" placeholder="Email" required>
-                            </div>
-                            <div class="form-group col-12">
-                                <input type="text" class="form-control" placeholder="Subject" required>
-                            </div>
-                            <div class="form-group col-12">
-                                <textarea name="" rows="4" class="form-control" placeholder="Message" required></textarea>
-                            </div>
-                            <div class="form-group col-12 d-grid">
-                                <button type="submit" class="btn btn-brand">Contact Me</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-
-
-            </div>
-        </section>
-        <!-- //CONTACT -->
-
-        <!-- FOOTER -->
-        <footer class="py-5 px-lg-5">
-            <div class="container">
-                <div class="row gy-4 justify-content-between">
-                    <div class="col-auto">
-                        <p class="mb-2"> <a href="#" class="fw-bold"></a></p>
-                        <p></p>
-                    </div>
-                    <div class="col-auto">
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- //FOOTER -->
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-role">Senior Oracle SCM / OTM Consultant</div>
+          <div class="exp-date">Sep 2008 – Jun 2019</div>
+        </div>
+        <div class="exp-company">Tata Consultancy Services · Client: Ingersoll Rand, USA</div>
+        <ul class="exp-bullets">
+          <li>Led in-sourcing of inbound logistics from a 3PL to a company-managed OTM system, onboarding 900+ suppliers and driving $2M+ in annualized savings</li>
+          <li>Led corporate divestiture separation and validation of Oracle SCM (OTM &amp; EBS) systems across 1,600+ IT applications</li>
+          <li>Led a team of 20+ offshore associates supporting 3 Oracle application instances with &gt;95% on-time-delivery on issue resolution</li>
+          <li>Received President's Award for the BOSS Project (DSO Freight Consolidation) and GISC 2018 Business Award ($100k/month cost reduction)</li>
+        </ul>
+        <div class="exp-tags"><span class="exp-tag">Ingersoll Rand</span><span class="exp-tag">OTM1 Inbound Logistics</span><span class="exp-tag">3PL Transition</span><span class="exp-tag">Team Leadership</span><span class="exp-tag">$2M+ Savings</span></div>
+      </div>
 
     </div>
-    <!-- //CONTENT WRAPPER -->
+  </div>
+</section>
 
+<!-- PROJECTS -->
+<section id="projects" style="background:var(--off);">
+  <div class="section-inner">
+    <div class="section-tag">Portfolio</div>
+    <h2 class="section-title">Delivered &amp; Deployed</h2>
+    <p class="section-subtitle">Flagship OTM &amp; Oracle SCM initiatives — solution architecture, cost savings, and process transformation.</p>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-card-header"><span class="project-num">01 / CLOUD</span><span class="project-live">● Current</span></div>
+        <div class="project-card-body">
+          <h3>NextGen TMS — OTM SaaS Implementation</h3>
+          <p>Multi-phase, multi-regional (NA &amp; Europe) OTM Cloud rollout centralizing logistics planning, execution, and settlement onto a scalable SaaS platform.</p>
+        </div>
+        <div class="project-card-footer">
+          <div class="project-stack"><span class="proj-tag">OTM Cloud</span><span class="proj-tag">OIC</span><span class="proj-tag">Apigee</span><span class="proj-tag">Oracle EBS R12</span></div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-card-header"><span class="project-num">02 / SAVINGS</span><span class="project-live">● $2M+</span></div>
+        <div class="project-card-body">
+          <h3>OTM1 Inbound Logistics — 3PL In-Sourcing</h3>
+          <p>In-sourced inbound logistics from a 3PL to a company-managed OTM system, onboarding 900+ suppliers with full carrier control and visibility.</p>
+        </div>
+        <div class="project-card-footer">
+          <div class="project-stack"><span class="proj-tag">OTM</span><span class="proj-tag">Supplier Portal</span><span class="proj-tag">EDI</span></div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-card-header"><span class="project-num">03 / SAVINGS</span><span class="project-live">● $1.5M/yr</span></div>
+        <div class="project-card-body">
+          <h3>MDC Outbound Planning</h3>
+          <p>Multi-wave Oracle EBS &amp; OTM enhancement consolidating shipments and automating processes for the Parts Distribution Center.</p>
+        </div>
+        <div class="project-card-footer">
+          <div class="project-stack"><span class="proj-tag">Bulk Planning</span><span class="proj-tag">WMS</span><span class="proj-tag">FourKite</span></div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-card-header"><span class="project-num">04 / SAVINGS</span><span class="project-live">● $1.2M/yr</span></div>
+        <div class="project-card-body">
+          <h3>OTM2 Continuous Move &amp; Bulk Planning</h3>
+          <p>Merged inbound and outbound shipments into continuous move tours, converting deadheads and LTL into optimized Full Truckloads.</p>
+        </div>
+        <div class="project-card-footer">
+          <div class="project-stack"><span class="proj-tag">Continuous Move</span><span class="proj-tag">EDI 204</span><span class="proj-tag">Bulk Plan</span></div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-card-header"><span class="project-num">05 / TOOL</span><span class="project-live">● Live</span></div>
+        <div class="project-card-body">
+          <h3>Rate Inquiry Portal — Self-Service Routing Guide</h3>
+          <p>Custom, low-code portal replacing a costly third-party tool, leveraging OTM's Rate Inquiry Web Service for secure internal/external access.</p>
+        </div>
+        <div class="project-card-footer">
+          <div class="project-stack"><span class="proj-tag">RIQ Web Service</span><span class="proj-tag">Security Rules</span><span class="proj-tag">UI/UX</span></div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-card-header"><span class="project-num">06 / AUTOMATION</span><span class="project-live">● Live</span></div>
+        <div class="project-card-body">
+          <h3>OTM Dock Appointment Scheduling</h3>
+          <p>Replaced spreadsheet-based scheduling with a self-service Dock Scheduling Workbench across Dealer Sales Offices and Distribution Centers.</p>
+        </div>
+        <div class="project-card-footer">
+          <div class="project-stack"><span class="proj-tag">Dock Scheduling</span><span class="proj-tag">Automation Agents</span><span class="proj-tag">EDI</span></div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-card-header"><span class="project-num">07 / PARCEL</span><span class="project-live">● 11 Sites</span></div>
+        <div class="project-card-body">
+          <h3>Parcel Shipping Transformation</h3>
+          <p>Lean Packing solution across all Residential &amp; Commercial sites, decommissioning legacy FedEx servers and integrating rating into Oracle R12.</p>
+        </div>
+        <div class="project-card-footer">
+          <div class="project-stack"><span class="proj-tag">Lean Packing</span><span class="proj-tag">Oracle R12</span><span class="proj-tag">Parcel Rating</span></div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-card-header"><span class="project-num">08 / AUTOMATION</span><span class="project-live">● Live</span></div>
+        <div class="project-card-body">
+          <h3>Static Lane Automation</h3>
+          <p>Rule-based OTM solution automating planning of high-volume recurring shipments with dedicated carrier networks and pre-negotiated capacity.</p>
+        </div>
+        <div class="project-card-footer">
+          <div class="project-stack"><span class="proj-tag">Static Lane</span><span class="proj-tag">Business Rules</span><span class="proj-tag">Auto-Tender</span></div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-card-header"><span class="project-num">09 / AI</span><span class="project-live">● Emerging</span></div>
+        <div class="project-card-body">
+          <h3>AI &amp; ML for Supply Chain — Route Optimization</h3>
+          <p>Leveraging AI, machine learning, and Python to develop next-generation solutions for route optimization, delay prediction, and enhanced visibility.</p>
+        </div>
+        <div class="project-card-footer">
+          <div class="project-stack"><span class="proj-tag">Python</span><span class="proj-tag">OCI Generative AI</span><span class="proj-tag">ML</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- CERTIFICATIONS -->
+<section id="certifications" class="certs-bg">
+  <div class="section-inner">
+    <div class="section-tag">Credentials</div>
+    <h2 class="section-title">12 Active Certifications</h2>
+    <p class="section-subtitle">Oracle Cloud, AI, transportation, and delivery certifications — all active.</p>
+    <div class="certs-grid">
+      <div class="cert-card"><div class="cert-icon">🚚</div><div class="cert-name">Oracle Fusion Transportation &amp; GTM Cloud 2025 Implementation Professional</div><div class="cert-issuer">Oracle</div><div class="cert-status">Active</div></div>
+      <div class="cert-card"><div class="cert-icon">📦</div><div class="cert-name">Oracle Order Management Cloud Order to Cash 2025 Implementation Professional</div><div class="cert-issuer">Oracle</div><div class="cert-status">Active</div></div>
+      <div class="cert-card"><div class="cert-icon">🤖</div><div class="cert-name">Oracle Cloud Infrastructure 2025 Generative AI Professional</div><div class="cert-issuer">Oracle</div><div class="cert-status">Active</div></div>
+      <div class="cert-card"><div class="cert-icon">🏭</div><div class="cert-name">Oracle Warehouse Management Cloud 2024 Implementation Professional</div><div class="cert-issuer">Oracle</div><div class="cert-status">Active</div></div>
+      <div class="cert-card"><div class="cert-icon">🔷</div><div class="cert-name">Oracle Fusion Cloud Applications SCM Certified Foundations Associate</div><div class="cert-issuer">Oracle</div><div class="cert-status">Active</div></div>
+      <div class="cert-card"><div class="cert-icon">🧠</div><div class="cert-name">Oracle Cloud Infrastructure 2024 Certified AI Foundations Associate</div><div class="cert-issuer">Oracle</div><div class="cert-status">Active</div></div>
+      <div class="cert-card"><div class="cert-icon">☁️</div><div class="cert-name">Oracle Cloud Infrastructure 2024 Certified Architect Associate</div><div class="cert-issuer">Oracle</div><div class="cert-status">Active</div></div>
+      <div class="cert-card"><div class="cert-icon">🔶</div><div class="cert-name">Oracle E-Business Suite R12 Supply Chain Certified Expert Consultant, Order Management</div><div class="cert-issuer">Oracle</div><div class="cert-status">Active</div></div>
+      <div class="cert-card"><div class="cert-icon">📋</div><div class="cert-name">Oracle E-Business Suite 12 SCM Certified Implementation Specialist: Order Management</div><div class="cert-issuer">Oracle</div><div class="cert-status">Active</div></div>
+      <div class="cert-card"><div class="cert-icon">📦</div><div class="cert-name">Oracle E-Business Suite 12 SCM Certified Implementation Specialist: Inventory</div><div class="cert-issuer">Oracle</div><div class="cert-status">Active</div></div>
+      <div class="cert-card"><div class="cert-icon">🏃</div><div class="cert-name">Professional Scrum Master (PSM I)</div><div class="cert-issuer">Scrum.org</div><div class="cert-status">Active</div></div>
+      <div class="cert-card"><div class="cert-icon">🌐</div><div class="cert-name">Oracle Global Trade Management 6 Certified Implementation Specialist</div><div class="cert-issuer">Oracle</div><div class="cert-status">Active</div></div>
+    </div>
 
-    <script src="./assets/js/bootstrap.bundle.min.js"></script>
-    <script src="./assets/js/aos.js"></script>
-    <script src="./assets/js/main.js"></script>
+    <div class="pub-block">
+      <p class="pub-title">Additional Credentials &amp; Recognition:</p>
+      <div class="pub-list">
+        <div class="pub-item">Leading Digital Transformation and Innovation Certificate — INSEAD</div>
+        <div class="pub-item">TCS Contextual Master — first 50 from Manufacturing ISU</div>
+        <div class="pub-item">Diploma in Advanced Computing (C-DAC), Pune University &amp; Master of Computer Application (MCA), M.P. Bhoj University</div>
+      </div>
+    </div>
+
+    <div class="pub-block">
+      <p class="pub-title">Publications &amp; Thought Leadership:</p>
+      <div class="pub-list">
+        <div class="pub-item">OTM US SIG 2024 — "Trane Technologies: Maximize Quality and Improve Productivity through OTM Routing Guide Portal"</div>
+        <div class="pub-item">OTM US SIG 2022 — "OTM Dock Scheduling at Trane Technologies to Improve User Productivity"</div>
+        <div class="pub-item">OTM US SIG 2020 — "OTM Self Service Password Reset Portal for Suppliers"</div>
+        <div class="pub-item">IDC Spotlight Paper (with Oracle) — <a href="https://idcdocserv.com/US52726824" target="_blank">"A Composable Supply Chain Enabled by Better Transportation Management"</a></div>
+        <div class="pub-item">White Paper — "Parcel Shipping Process Optimization through Global Solution"</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONNECT -->
+<section id="connect" class="connect-bg">
+  <div class="section-inner">
+    <div class="connect-grid">
+      <div class="connect-links">
+        <div class="section-tag" style="color:var(--accent2)">Online Presence</div>
+        <a href="http://www.linkedin.com/in/narendra-patel-b750b315" target="_blank" class="connect-link">
+          <div class="connect-link-icon">💼</div>
+          <div class="connect-link-text"><strong>LinkedIn</strong><span>linkedin.com/in/narendra-patel-b750b315</span></div>
+        </a>
+        <a href="mailto:Narendra.bsp@gmail.com" class="connect-link">
+          <div class="connect-link-icon">✉️</div>
+          <div class="connect-link-text"><strong>Email</strong><span>Narendra.bsp@gmail.com</span></div>
+        </a>
+        <a href="tel:+17049789555" class="connect-link">
+          <div class="connect-link-icon">📞</div>
+          <div class="connect-link-text"><strong>Phone</strong><span>+1 704 978 9555</span></div>
+        </a>
+      </div>
+      <div class="connect-cta">
+        <h2>Let's optimize<br>your <span>supply chain.</span></h2>
+        <p>Open to Senior Solution Architect and Oracle SCM/OTM leadership engagements. Based in Charlotte, NC.</p>
+        <a href="mailto:Narendra.bsp@gmail.com" class="btn-primary" style="margin-bottom:0.75rem;display:inline-block;">Send Email →</a><br>
+        <a href="http://www.linkedin.com/in/narendra-patel-b750b315" target="_blank" class="btn-primary">Connect on LinkedIn →</a>
+        <div class="connect-details">
+          <div class="connect-detail">📞 <a href="tel:+17049789555">+1 704 978 9555</a></div>
+          <div class="connect-detail">✉️ <a href="mailto:Narendra.bsp@gmail.com">Narendra.bsp@gmail.com</a></div>
+          <div class="connect-detail">📍 Charlotte, NC · USA</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Narendra Patel · Charlotte, NC · Oracle SCM Solution Architect · OTM/GTM Specialist</p>
+</footer>
+
 </body>
-
 </html>
